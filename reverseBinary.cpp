@@ -42,7 +42,6 @@ int main(){
 		dividend=result;
 	}
 	}
-	std::cout<<initialBinString<<std::endl;
 	unsigned long finBinString = std::bitset<32>(initialBinString).to_ulong();
 	std::cout<<finBinString<<std::endl;
 	
