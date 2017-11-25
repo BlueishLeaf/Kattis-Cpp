@@ -18,8 +18,8 @@ int main(){
 	}
 	x=0;
 	y=0;
-	for(int i=rows;i>=0;i--){
-		for(int j=columns;j>=0;j--){
+	for(int i=rows-1;i>=0;i--){
+		for(int j=columns-1;j>=0;j--){
 			newTable[x][y]=table[i][j];
 			y++;
 		}
@@ -33,5 +33,4 @@ int main(){
 		}
 		std::cout<<std::endl;
 	}
-	std::cout<<newTable[1][0]<<std::endl;
 }
