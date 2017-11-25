@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+
 int getDigits(int x){
 	int num=x;
 	int digitCount=0;
@@ -14,7 +16,6 @@ void constructArray(int x,int digitCount,int lArray[]){
 	for(int i=digitCount-1;i>=0;i--){
 		lArray[i] = num % 10;
 		num/=10;
-		std::cout<<lArray[i]<<std::endl;
 	}
 }
 
@@ -25,9 +26,7 @@ int main(){
 	std::cin>>D;
 	int X;
 	std::cin>>X;
-	int N;
-	int M;
-	
+	std::vector<int> matchedNums;
 	for(int i=L;i<=D;i++){
 		int digitCount = getDigits(i);
 		int lArray[digitCount];
@@ -37,7 +36,9 @@ int main(){
 			sum+=lArray[j];
 		}
 		if(sum==X){
-			std::cout<<i<<std::endl;
+			matchedNums.push_back(i);
 		}
 	}
+	std::cout<<matchedNums[0]<<std::endl;
+	std::cout<<matchedNums[matchedNums.size()-1]<<std::endl;
 }
